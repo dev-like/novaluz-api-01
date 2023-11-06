@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\CController;
 
-Route::get('/', function () {
-    $prods = DB::table('produtosweb')->get();
-    dd($prods);
-    // return view('welcome');
-});
+Route::get('/', [CController::class, 'index']);
+// Recuperar todas
+Route::get('/dd', [CController::class, 'dd']);
+Route::get('/return', [CController::class, 'return']);
